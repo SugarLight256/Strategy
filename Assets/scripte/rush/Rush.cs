@@ -12,8 +12,6 @@ public class Rush : MonoBehaviour {
 
     public bool moveTrigger;
 
-    public int unitCount;
-
     public float speed;
     private float x, y;
 	// Use this for initialization
@@ -30,19 +28,17 @@ public class Rush : MonoBehaviour {
                 Unit.RemoveAt(i);
             }
         }
-        if (unitCount <= 0)
+        if (Unit.Count <= 0)
         {
             Destroy(my);
         }
         Move();
-        unitCount = 0;
     }
 
     public void SetUnit()
     {
         unit_zako Unit_Zako;
         Unit = new List<GameObject>(GameObject.FindGameObjectsWithTag("Selected_Unit"));
-        unitCount = GameObject.FindGameObjectsWithTag("Selected_Unit").Length;
         speed = Unit[0].GetComponent<unit_zako>().Max_Speed;
         for (int i = 1; i < Unit.Count + 1; i++)//iはposの名前に利用するため1だけ増やしておく.
         {
@@ -68,7 +64,7 @@ public class Rush : MonoBehaviour {
                 ready++;
             }
         }
-        if (ready >= unitCount)
+        if (ready >= Unit.Count)
         {
             transform.GetComponent<Rigidbody2D>().velocity = direction * speed;
         }

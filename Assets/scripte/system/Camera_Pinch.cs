@@ -133,7 +133,6 @@ public class Camera_Pinch : MonoBehaviour {
                             if (SelectedObj.transform.tag == "Rush")
                             {
                                 SelectedObj.GetComponent<Rush>().SetPos(touchPos);
-                                print("asd");
                             }
                         }
                         nowPhase = 0;
