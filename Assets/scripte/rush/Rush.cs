@@ -5,10 +5,9 @@ using System.Collections.Generic;
 public class Rush : MonoBehaviour {
 
     public List<GameObject> Unit;
-    public GameObject my;
 
     private Vector2 direction;
-    private  Vector2 movePoint;
+    private Vector2 movePoint;
 
     public bool moveTrigger;
 
@@ -16,23 +15,22 @@ public class Rush : MonoBehaviour {
     private float x, y;
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        for (int i = 0; i < Unit.Count; i++)
+        for (int i = 0; i < Unit.Count; ++i)
         {
             if (Unit[i] == null)
             {
                 Unit.RemoveAt(i);
             }
         }
+        Move();
         if (Unit.Count <= 0)
         {
-            Destroy(my);
+            Destroy(transform.gameObject);
         }
-        Move();
     }
 
     public void SetUnit()
@@ -46,7 +44,7 @@ public class Rush : MonoBehaviour {
             Unit[i - 1].transform.FindChild("selectCollider").GetComponent<unit_select>().IsSelected = false;
             Unit[i - 1].GetComponent<unit_zako>().ReTag();
             Unit_Zako.nowPhase = 0;
-            Unit_Zako.Rush = my;
+            Unit_Zako.Rush = transform.gameObject;
             Unit_Zako.RushPos = transform.FindChild("pos" + i).gameObject.transform.position;
             Unit_Zako.moveTrigger = true;
             Unit_Zako.set_speed(speed);

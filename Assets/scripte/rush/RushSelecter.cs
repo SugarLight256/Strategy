@@ -30,28 +30,28 @@ public class RushSelecter : MonoBehaviour {
 
     private void move()
     {
-        if (transform.position.x + 70 <= Screen.width)
+        if (transform.position.y >= 75)
         {
             moveTrigger = false;
         }
         else
         {
             Vector3 pos = transform.position;
-            pos.x -= 10;
+            pos.y += 10;
             transform.position = pos;
         }
     }
 
     private void close()
     {
-        if (transform.position.x - 75 >= Screen.width)
+        if (transform.position.y <= -85)
         {
             closeTrigger = false;
         }
         else
         {
             Vector3 pos = transform.position;
-            pos.x += 10;
+            pos.y -= 10;
             transform.position = pos;
         }
     }

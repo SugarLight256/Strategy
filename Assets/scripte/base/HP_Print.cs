@@ -11,7 +11,15 @@ public class HP_Print : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-        transform.GetComponent<Image>().fillAmount = Base.GetComponent<Base_Main>().HPper;
+    void Update()
+    {
+        if (Base != null)
+        {
+            transform.GetComponent<Image>().fillAmount = Base.GetComponent<Base_Main>().HPper;
+        }
+        else
+        {
+            transform.GetComponent<Image>().fillAmount = 0;
+        }
     }
 }

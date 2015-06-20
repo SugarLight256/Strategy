@@ -8,6 +8,8 @@ public class Camera_Pinch : MonoBehaviour {
     public  GameObject RushSelecter;
     public  GameObject Rush_Manager;
     public  GameObject SelectedObj;
+    public  GameObject TP_UI;
+    public  GameObject TP_Normal;
 	private GameObject SelectBox;
 
 	private bool IsPinched  = false;
@@ -86,7 +88,7 @@ public class Camera_Pinch : MonoBehaviour {
                 transform.position -= new Vector3(diff.x, diff.y, 0);
 
                 float fMinSize = 50.0f;
-                float fMaxSize = 2000.0f;
+                float fMaxSize = 1000.0f;
 
                 m_Camera.orthographicSize = Mathf.Clamp(m_Camera.orthographicSize, fMinSize, fMaxSize);
 
@@ -117,16 +119,38 @@ public class Camera_Pinch : MonoBehaviour {
                 switch (nowPhase)
                 {
                     case 0://特になし.
-
+                        TP_Normal.layer = LayerMask.NameToLayer("TP_Unit");
                         break;
                     case 1://セレクトパネル表示中.
+
+                        print(TP_UI.layer);
                         if (Rush_Maker == true)//もしラッシュ作成Tureなら作成.
                         {
                             Rush_Manager.GetComponent<RushManager>().make_rush(touchPos);
                             Rush_Maker = false;
-                            nowPhase = 2;//現在をRush移動目的地選択中にする.
+                            nowPhase = 0;
+                        }
+                        else if (Rush_Manager.GetComponent<RushManager>().SelectedUnit.Length == 0 && GameObject.FindGameObjectsWithTag("Rush").Length > 0)
+                        {
+                            TP_Normal.layer = LayerMask.NameToLayer("TP_Rush");
+                            TP_UI.layer = LayerMask.NameToLayer("NoCollider");
+                            if (SelectedObj != null)
+                            {
+                                if (SelectedObj.transform.tag == "Rush")
+                                {
+                                    SelectedObj.GetComponent<Rush>().SetPos(touchPos);
+                                    SelectedObj = null;
+                                    nowPhase = 0;
+                                }
+                            }
+                        }
+                        else
+                        {
+                            TP_Normal.layer = LayerMask.NameToLayer("NoCollider");
+                            TP_UI.layer = LayerMask.NameToLayer("TP_UI");
                         }
                         break;
+
                     case 2://Rush移動地点指定中.
                         if (SelectedObj != null)
                         {

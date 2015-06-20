@@ -13,7 +13,7 @@ public class RushManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    
+        SelectedUnit = GameObject.FindGameObjectsWithTag("Selected_Unit");
 	}
 
     public void make_rush(Vector3 pos)
