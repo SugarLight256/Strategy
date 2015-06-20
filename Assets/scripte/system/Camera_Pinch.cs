@@ -116,18 +116,15 @@ public class Camera_Pinch : MonoBehaviour {
                 switch (nowPhase)
                 {
                     case 0://特になし.
-                        TP_Normal.layer = LayerMask.NameToLayer("TP_Unit");
                         break;
                     case 1://セレクトパネル表示中.
-
-                        print(TP_UI.layer);
                         if (Rush_Maker == true)//もしラッシュ作成Tureなら作成.
                         {
                             Rush_Manager.GetComponent<RushManager>().make_rush(touchPos);
                             Rush_Maker = false;
                             nowPhase = 0;
                         }
-                        else if (Rush_Manager.GetComponent<RushManager>().SelectedUnit.Length == 0 && GameObject.FindGameObjectsWithTag("Rush").Length > 0)
+                        else if (Rush_Manager.GetComponent<RushManager>().SelectedUnit.Count == 0 && GameObject.FindGameObjectsWithTag("Rush").Length > 0)
                         {
                             TP_Normal.layer = LayerMask.NameToLayer("TP_Rush");
                             TP_UI.layer = LayerMask.NameToLayer("NoCollider");
@@ -137,14 +134,17 @@ public class Camera_Pinch : MonoBehaviour {
                                 {
                                     SelectedObj.GetComponent<Rush>().SetPos(touchPos);
                                     SelectedObj = null;
-                                    nowPhase = 0;
                                 }
                             }
+                            nowPhase = 0;
+                        }
+                        else if (Rush_Manager.GetComponent<RushManager>().SelectedUnit.Count > 0)
+                        {
+                            TP_UI.layer = LayerMask.NameToLayer("TP_UI");
                         }
                         else
                         {
-                            TP_Normal.layer = LayerMask.NameToLayer("NoCollider");
-                            TP_UI.layer = LayerMask.NameToLayer("TP_UI");
+                            nowPhase = 0;
                         }
                         break;
 

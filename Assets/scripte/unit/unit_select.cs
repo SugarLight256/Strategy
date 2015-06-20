@@ -10,7 +10,7 @@ public class unit_select : MonoBehaviour
     void Start()
     {
         IsSelected = false;
-        Rush_Manager = GameObject.Find("RushSelecter").transform.FindChild("Plate").gameObject;
+        Rush_Manager = GameObject.Find("RushSelecter").transform.FindChild("RushSelectPlate").gameObject;
     }
 
     // Update is called once per frame

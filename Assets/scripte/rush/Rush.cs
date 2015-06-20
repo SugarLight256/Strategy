@@ -6,6 +6,8 @@ public class Rush : MonoBehaviour {
 
     public List<GameObject> Unit;
 
+    public GameObject MainCamera;
+
     private Vector2 direction;
     private Vector2 movePoint;
 
@@ -15,6 +17,7 @@ public class Rush : MonoBehaviour {
     private float x, y;
 	// Use this for initialization
 	void Start () {
+        MainCamera = GameObject.Find("MainCamera");
 	}
 	
 	// Update is called once per frame
@@ -99,9 +102,14 @@ public class Rush : MonoBehaviour {
 
     }
 
-    void OnTriggerEnter2D(Collider2D c)
+    void OnTriggerStay2D(Collider2D c)
     {
-
+        if (c.gameObject.layer == LayerMask.NameToLayer("TP_Rush"))
+        {
+            MainCamera.GetComponent<Camera_Pinch>().SelectedObj = transform.gameObject;
+            MainCamera.GetComponent<Camera_Pinch>().nowPhase = 1;
+            GameObject.Find("RushSelectPlate").GetComponent<RushSelecter>().moveTrigger = true;
+        }
     }
 
 }
