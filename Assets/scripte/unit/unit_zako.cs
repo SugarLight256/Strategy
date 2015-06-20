@@ -31,6 +31,7 @@ public class unit_zako : MonoBehaviour {
         SetColor();
         if (Rush != null)
         {
+            Rush.GetComponent<Rush>().unitCount++;
             x = RushPos.x - transform.position.x;
             y = RushPos.y - transform.position.y;
         }

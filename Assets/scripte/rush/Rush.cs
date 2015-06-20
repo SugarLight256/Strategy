@@ -13,6 +13,8 @@ public class Rush : MonoBehaviour {
 
     public bool moveTrigger;
 
+    public int unitCount;
+
     public float speed;
     private float x, y;
 	// Use this for initialization
@@ -22,7 +24,7 @@ public class Rush : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        for (int i = 0; i < Unit.Count; ++i)
+        for (int i = 0; i < Unit.Count; i++)
         {
             if (Unit[i] == null)
             {
@@ -30,10 +32,11 @@ public class Rush : MonoBehaviour {
             }
         }
         Move();
-        if (Unit.Count <= 0)
+        if (unitCount <= 0)
         {
             Destroy(transform.gameObject);
         }
+        unitCount = 0;
     }
 
     public void SetUnit()

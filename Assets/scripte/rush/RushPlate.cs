@@ -34,7 +34,6 @@ public class RushPlate : MonoBehaviour {
             Main_Camera.GetComponent<Camera_Pinch>().Rush_Maker = true;
             RushManager.GetComponent<RushManager>().NextKnd = knd;
         }
-        print(knd);
     }
 
 }
