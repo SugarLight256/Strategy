@@ -19,11 +19,15 @@ public class RushManager : MonoBehaviour {
     public void make_rush(Vector3 pos)
     {
         SelectedUnit = GameObject.FindGameObjectsWithTag("Selected_Unit");
-        if (SelectedUnit.Length <= 20 && SelectedUnit.Length > 0)
+        if (SelectedUnit.Length >= 20)
         {
-            RushBuff = Instantiate(Rusher[NextKnd - 1], new Vector3(pos.x, pos.y, 0), Quaternion.identity) as GameObject;
-            RushBuff.GetComponent<Rush>().SetUnit();
-            RushBuff.transform.parent = transform;
+            for (int i = 20 ; i < SelectedUnit.Length ; i++)
+            {
+                SelectedUnit[i] = null;
+            }
         }
+        RushBuff = Instantiate(Rusher[NextKnd - 1], new Vector3(pos.x, pos.y, 0), Quaternion.identity) as GameObject;
+        RushBuff.GetComponent<Rush>().SetUnit();
+        RushBuff.transform.parent = transform;
 	}
 }
