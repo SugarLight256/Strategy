@@ -43,13 +43,10 @@ public class Camera_Pinch : MonoBehaviour {
                 nowPhase = 1;
                 IsSelect = false;
             }
-            if (Input.touches[0].phase == TouchPhase.Began)
+            if (nowPhase == 2 || nowPhase == 0)
             {
-                if (nowPhase == 2 || nowPhase == 0)
-                {
-                    RushSelecter.GetComponent<RushSelecter>().closeTrigger = true;
+                RushSelecter.GetComponent<RushSelecter>().closeTrigger = true;
 
-                }
             }
         }
         if (Input.touchCount >= 1)
