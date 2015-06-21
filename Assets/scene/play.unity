@@ -288,11 +288,89 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 407280, guid: d8bf59a0f0ff826439001a3bf7ca30ac, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d8bf59a0f0ff826439001a3bf7ca30ac, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &137609119
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 137609121}
+  - 114: {fileID: 137609120}
+  m_Layer: 0
+  m_Name: Orange_AI_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &137609120
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 137609119}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4526e491adc51e4cbcd2e3f7d538563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBase:
+  - {fileID: 415859484}
+  - {fileID: 988680751}
+  - {fileID: 606505825}
+  rushPref:
+  - {fileID: 116222, guid: 2cab1127f63d5e54c8e252c3babc7dcb, type: 2}
+  - {fileID: 151856, guid: ec5a1b4234ebeef4dacf516fb69967f3, type: 2}
+  - {fileID: 172480, guid: ba3ee958c338e9148a740debdc759c06, type: 2}
+  - {fileID: 113306, guid: d19a78fc515252a4885331cae291b505, type: 2}
+  rushMakePosList:
+  - {x: 0, y: 550}
+  - {x: -200, y: 750}
+  - {x: 0, y: 950}
+  - {x: 200, y: 750}
+  nextRushUnit: []
+  RushMakeCount: 0
+  nextRushSize: 0
+  sizeProb:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  rushSizeAve: 8
+--- !u!4 &137609121
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 137609119}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 750, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 21
 --- !u!1 &157727242
 GameObject:
   m_ObjectHideFlags: 0
@@ -484,6 +562,84 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 288729811}
+--- !u!1 &322373557
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 322373559}
+  - 114: {fileID: 322373558}
+  m_Layer: 0
+  m_Name: Blue_AI_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &322373558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 322373557}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4526e491adc51e4cbcd2e3f7d538563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBase:
+  - {fileID: 988680751}
+  - {fileID: 415859484}
+  - {fileID: 1846774432}
+  rushPref:
+  - {fileID: 116222, guid: 2cab1127f63d5e54c8e252c3babc7dcb, type: 2}
+  - {fileID: 151856, guid: ec5a1b4234ebeef4dacf516fb69967f3, type: 2}
+  - {fileID: 172480, guid: ba3ee958c338e9148a740debdc759c06, type: 2}
+  - {fileID: 113306, guid: d19a78fc515252a4885331cae291b505, type: 2}
+  rushMakePosList:
+  - {x: 0, y: -550}
+  - {x: 200, y: -750}
+  - {x: 0, y: -950}
+  - {x: -200, y: -750}
+  nextRushUnit: []
+  RushMakeCount: 0
+  nextRushSize: 0
+  sizeProb:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  rushSizeAve: 8
+--- !u!4 &322373559
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 322373557}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -750, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 20
 --- !u!1 &415859484
 GameObject:
   m_ObjectHideFlags: 0
@@ -553,13 +709,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847cea15602653940b20c4ee90812983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cool: 800
+  coolMax: 300
+  IsPlayer: 1
   unit:
   - {fileID: 147784, guid: 4f18fb1702d2d19459078a912dce6726, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  AI_Manager: {fileID: 0}
 --- !u!114 &415859488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -572,6 +730,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blastShade: {fileID: 184040, guid: d771dfb9e8d96b3468cce6d86c0df7ea, type: 2}
+  unitCount: 0
   maxHP: 1000
   HP: 0
   HPper: 0
@@ -709,6 +868,84 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!1 &430074847
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 430074848}
+  - 114: {fileID: 430074849}
+  m_Layer: 0
+  m_Name: Red_AI_Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &430074848
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 430074847}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -750, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
+--- !u!114 &430074849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 430074847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4526e491adc51e4cbcd2e3f7d538563, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyBase:
+  - {fileID: 1846774432}
+  - {fileID: 606505825}
+  - {fileID: 415859484}
+  rushPref:
+  - {fileID: 116222, guid: 2cab1127f63d5e54c8e252c3babc7dcb, type: 2}
+  - {fileID: 151856, guid: ec5a1b4234ebeef4dacf516fb69967f3, type: 2}
+  - {fileID: 172480, guid: ba3ee958c338e9148a740debdc759c06, type: 2}
+  - {fileID: 113306, guid: d19a78fc515252a4885331cae291b505, type: 2}
+  rushMakePosList:
+  - {x: -550, y: 0}
+  - {x: -750, y: -200}
+  - {x: -950, y: 0}
+  - {x: -750, y: 200}
+  nextRushUnit: []
+  RushMakeCount: 0
+  nextRushSize: 0
+  sizeProb:
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  - 0
+  rushSizeAve: 8
 --- !u!1 &489170780
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,13 +1088,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847cea15602653940b20c4ee90812983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cool: 800
+  coolMax: 300
+  IsPlayer: 0
   unit:
   - {fileID: 103678, guid: 60da2b5afa7c4714d8d5f26e23a8a416, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  AI_Manager: {fileID: 322373557}
 --- !u!114 &606505829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -870,6 +1109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blastShade: {fileID: 171836, guid: d7384dd93325b39468ae169489d67e7d, type: 2}
+  unitCount: 0
   maxHP: 1000
   HP: 0
   HPper: 0
@@ -988,13 +1228,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847cea15602653940b20c4ee90812983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cool: 800
+  coolMax: 50
+  IsPlayer: 0
   unit:
   - {fileID: 107280, guid: d8bf59a0f0ff826439001a3bf7ca30ac, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  AI_Manager: {fileID: 430074847}
 --- !u!114 &988680755
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1007,6 +1249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blastShade: {fileID: 126058, guid: 9c85783c02aee324c861b8b8983df271, type: 2}
+  unitCount: 0
   maxHP: 1000
   HP: 0
   HPper: 0
@@ -1913,7 +2156,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 447784, guid: 4f18fb1702d2d19459078a912dce6726, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 13
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f18fb1702d2d19459078a912dce6726, type: 2}
@@ -1987,13 +2230,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847cea15602653940b20c4ee90812983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cool: 800
+  coolMax: 300
+  IsPlayer: 0
   unit:
   - {fileID: 108576, guid: 8617094809a1a4e448332cd6fe3d56f0, type: 2}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  AI_Manager: {fileID: 137609119}
 --- !u!114 &1846774436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2006,6 +2251,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   blastShade: {fileID: 165988, guid: 785fcdb3d0c55c64b8baf17a6e69ff23, type: 2}
+  unitCount: 0
   maxHP: 1000
   HP: 0
   HPper: 0
@@ -2074,7 +2320,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 403678, guid: 60da2b5afa7c4714d8d5f26e23a8a416, type: 2}
       propertyPath: m_RootOrder
-      value: 13
+      value: 12
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 60da2b5afa7c4714d8d5f26e23a8a416, type: 2}
@@ -2350,7 +2596,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 408576, guid: 8617094809a1a4e448332cd6fe3d56f0, type: 2}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8617094809a1a4e448332cd6fe3d56f0, type: 2}

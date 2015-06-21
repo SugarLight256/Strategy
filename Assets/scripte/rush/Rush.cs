@@ -68,12 +68,12 @@ public class Rush : MonoBehaviour {
         int ready=0;
         for (int i = 0; i < Unit.Count; i++)
         {
-            if (Unit[i].GetComponent<unit_zako>().nowPhase == 1)
+            if (Unit[i] != null && Unit[i].GetComponent<unit_zako>().nowPhase == 1)
             {
                 ready++;
             }
         }
-        if (ready >= unitCount)
+        if (ready >= Unit.Count)
         {
             transform.GetComponent<Rigidbody2D>().velocity = direction * speed;
         }
@@ -83,7 +83,7 @@ public class Rush : MonoBehaviour {
             transform.GetComponent<Rigidbody2D>().angularVelocity = 0;
         }
 
-        if (Vector2.Distance(transform.position, movePoint) > speed/(speed*1.5))
+        if (Vector2.Distance(transform.position, movePoint) > 0.1*speed)
         {
             transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
         }
@@ -95,7 +95,10 @@ public class Rush : MonoBehaviour {
 
         for (int i = 1; i < Unit.Count + 1; i++)
         {
-            Unit[i - 1].GetComponent<unit_zako>().RushPos = transform.FindChild("pos" + i).gameObject.transform.position;
+            if (Unit[i-1] != null)
+            {
+                Unit[i - 1].GetComponent<unit_zako>().RushPos = transform.FindChild("pos" + i).gameObject.transform.position;
+            }
         }
         ready = 0;
     }
@@ -106,6 +109,10 @@ public class Rush : MonoBehaviour {
         x = movePoint.x;
         y = movePoint.y;
         direction = new Vector2(x - transform.position.x, y - transform.position.y).normalized;
+        if (!IsPlayer)
+        {
+            transform.tag = "Enemy_Rush";
+        }
     }
 
     void OnTriggerStay2D(Collider2D c)
@@ -116,6 +123,11 @@ public class Rush : MonoBehaviour {
             MainCamera.nowPhase = 1;
             MainCamera.TP_UI.layer = LayerMask.NameToLayer("NoCollider");
             GameObject.Find("RushSelectPlate").GetComponent<RushSelecter>().moveTrigger = true;
+        }
+        else if(!IsPlayer && c.gameObject.layer == LayerMask.NameToLayer("TP_Rush"))
+        {
+            MainCamera.SelectedObj = transform.gameObject;
+            MainCamera.nowPhase = 1;
         }
     }
 

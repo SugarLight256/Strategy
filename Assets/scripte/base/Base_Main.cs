@@ -28,6 +28,7 @@ public class Base_Main : MonoBehaviour {
         {
             Instantiate(blastShade, transform.position, transform.rotation);
             Destroy(transform.gameObject);
+            print("Destroy");
         }
     }
 }

@@ -33,10 +33,14 @@ public class Camera_Pinch : MonoBehaviour {
 
     void Update()
     {
-        /*if (SelectedObj != null && SelectedObj.tag == "Rush")
+        if (SelectedObj != null && SelectedObj.tag == "Rush")
         {
             transform.position = new Vector3(SelectedObj.transform.position.x, SelectedObj.transform.position.y, -10);
-        }*/
+        }
+        else if (SelectedObj!=null && SelectedObj.tag == "Enemy_Rush")
+        {
+            transform.position = new Vector3(SelectedObj.transform.position.x, SelectedObj.transform.position.y, -10);
+        }
         Vector3 position = transform.position;
         if (Input.touchCount > 0)
         {
@@ -104,7 +108,6 @@ public class Camera_Pinch : MonoBehaviour {
         {//拡大中ではなく一本タッチでスライドまたはダブルタッチでセレクト.
             if (Input.touches[0].phase == TouchPhase.Began)
             {
-
                 if (IsTap == true && timer <= selectTime)
                 {//セレクトBox表示.
 
@@ -136,9 +139,13 @@ public class Camera_Pinch : MonoBehaviour {
                             TP_UI.layer = LayerMask.NameToLayer("NoCollider");
                             if (SelectedObj != null)
                             {
-                                if (SelectedObj.transform.tag == "Rush" && Input.touches[0].position.y > m_Camera.WorldToScreenPoint(m_Camera.ScreenToWorldPoint(new Vector3(0,0,0))+new Vector3(0,75,0)).y)
+                                if (SelectedObj.transform.tag == "Rush" && Input.touches[0].position.y > m_Camera.WorldToScreenPoint(m_Camera.ScreenToWorldPoint(new Vector3(0, 0, 0)) + new Vector3(0, 75, 0)).y && SelectedObj.tag == "Rush")
                                 {
                                     SelectedObj.GetComponent<Rush>().SetPos(touchPos);
+                                    SelectedObj = null;
+                                }
+                                else
+                                {
                                     SelectedObj = null;
                                 }
                             }
