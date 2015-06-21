@@ -30,12 +30,17 @@ public class Rush : MonoBehaviour {
             {
                 Unit.RemoveAt(i);
             }
+            else if (Unit[i].GetComponent<unit_zako>().Rush != transform.gameObject)
+            {
+                Unit.RemoveAt(i);
+            }
+
         }
-        Move();
         if (unitCount <= 0)
         {
             Destroy(transform.gameObject);
         }
+        Move();
         unitCount = 0;
     }
 
@@ -68,7 +73,7 @@ public class Rush : MonoBehaviour {
                 ready++;
             }
         }
-        if (ready >= Unit.Count)
+        if (ready >= unitCount)
         {
             transform.GetComponent<Rigidbody2D>().velocity = direction * speed;
         }

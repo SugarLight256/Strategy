@@ -48,6 +48,8 @@ public class Camera_Pinch : MonoBehaviour {
                 RushSelecter.GetComponent<RushSelecter>().closeTrigger = true;
 
             }
+            TP_UI.layer = LayerMask.NameToLayer("TP_UI");
+            TP_Normal.layer = LayerMask.NameToLayer("TP_Rush");
         }
         if (Input.touchCount >= 1)
         {
@@ -57,6 +59,8 @@ public class Camera_Pinch : MonoBehaviour {
         {
             IsSelect = false;
             IsPinched = false;
+            TP_UI.layer = LayerMask.NameToLayer("NoCollider");
+            TP_Normal.layer = LayerMask.NameToLayer("NoCollider");
             Destroy(SelectBox);
         }
         else if (Input.touchCount == 2)
@@ -130,7 +134,7 @@ public class Camera_Pinch : MonoBehaviour {
                             TP_UI.layer = LayerMask.NameToLayer("NoCollider");
                             if (SelectedObj != null)
                             {
-                                if (SelectedObj.transform.tag == "Rush")
+                                if (SelectedObj.transform.tag == "Rush" && Input.touches[0].position.y > 75)
                                 {
                                     SelectedObj.GetComponent<Rush>().SetPos(touchPos);
                                     SelectedObj = null;
