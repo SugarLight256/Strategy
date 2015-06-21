@@ -72,7 +72,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shotPos: {x: 0, y: 0}
   atk: 1
-  speed: 50
+  speed: 80
   range: 0
 --- !u!212 &21218038
 SpriteRenderer:

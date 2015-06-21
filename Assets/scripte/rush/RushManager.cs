@@ -28,7 +28,8 @@ public class RushManager : MonoBehaviour {
     public void make_rush(Vector3 pos)
     {
         RushBuff = Instantiate(Rusher[NextKnd - 1], new Vector3(pos.x, pos.y, 0), Quaternion.identity) as GameObject;
-        RushBuff.GetComponent<Rush>().SetUnit();
+        RushBuff.GetComponent<Rush>().IsPlayer = true;
+        RushBuff.GetComponent<Rush>().SetUnit(SelectedUnit);
         RushBuff.transform.parent = transform;
 	}
 }
