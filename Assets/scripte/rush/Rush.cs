@@ -6,12 +6,13 @@ public class Rush : MonoBehaviour {
 
     public List<GameObject> Unit;
 
-    public GameObject MainCamera;
+    public Camera_Pinch MainCamera;
 
     private Vector2 direction;
     private Vector2 movePoint;
 
     public bool moveTrigger;
+    public bool IsPlayer;
 
     public int unitCount;
 
@@ -19,7 +20,7 @@ public class Rush : MonoBehaviour {
     private float x, y;
 	// Use this for initialization
 	void Start () {
-        MainCamera = GameObject.Find("MainCamera");
+        MainCamera = GameObject.Find("MainCamera").GetComponent<Camera_Pinch>();
 	}
 	
 	// Update is called once per frame
@@ -47,24 +48,30 @@ public class Rush : MonoBehaviour {
     public void SetUnit()
     {
         unit_zako Unit_Zako;
-        Unit = new List<GameObject>(GameObject.FindGameObjectsWithTag("Selected_Unit"));
+        if (IsPlayer)
+        {
+            Unit = new List<GameObject>(GameObject.FindGameObjectsWithTag("Selected_Unit"));
+        }
+        else
+        {
+
+        }
         speed = Unit[0].GetComponent<unit_zako>().Max_Speed;
-        for (int i = 1; i < Unit.Count + 1; i++)//iはposの名前に利用するため1だけ増やしておく.
+        for (int i = 1; i < Unit.Count + 1; i++)//iは3行下のposの名前に利用するため1だけ増やしておく.
         {
             Unit_Zako = Unit[i - 1].GetComponent<unit_zako>();
-            Unit[i - 1].transform.FindChild("selectCollider").GetComponent<unit_select>().IsSelected = false;
-            Unit[i - 1].GetComponent<unit_zako>().ReTag();
+            Unit_Zako.RushPos = transform.FindChild("pos" + i).gameObject.transform.position;
             Unit_Zako.nowPhase = 0;
             Unit_Zako.Rush = transform.gameObject;
-            Unit_Zako.RushPos = transform.FindChild("pos" + i).gameObject.transform.position;
             Unit_Zako.moveTrigger = true;
             Unit_Zako.set_speed(speed);
+            Unit[i - 1].transform.FindChild("selectCollider").GetComponent<unit_select>().IsSelected = false;
+            Unit[i - 1].GetComponent<unit_zako>().ReTag();
         }
     }
 
     public void Move()
     {
-        unit_zako Unit_Zako;
         int ready=0;
         for (int i = 0; i < Unit.Count; i++)
         {
@@ -95,8 +102,7 @@ public class Rush : MonoBehaviour {
 
         for (int i = 1; i < Unit.Count + 1; i++)
         {
-            Unit_Zako = Unit[i - 1].GetComponent<unit_zako>();
-            Unit_Zako.RushPos = transform.FindChild("pos" + i).gameObject.transform.position;
+            Unit[i - 1].GetComponent<unit_zako>().RushPos = transform.FindChild("pos" + i).gameObject.transform.position;
         }
         ready = 0;
     }
@@ -107,15 +113,15 @@ public class Rush : MonoBehaviour {
         x = movePoint.x;
         y = movePoint.y;
         direction = new Vector2(x - transform.position.x, y - transform.position.y).normalized;
-
     }
 
     void OnTriggerStay2D(Collider2D c)
     {
-        if (c.gameObject.layer == LayerMask.NameToLayer("TP_Rush"))
+        if (IsPlayer && c.gameObject.layer == LayerMask.NameToLayer("TP_Rush"))
         {
-            MainCamera.GetComponent<Camera_Pinch>().SelectedObj = transform.gameObject;
-            MainCamera.GetComponent<Camera_Pinch>().nowPhase = 1;
+            MainCamera.SelectedObj = transform.gameObject;
+            MainCamera.nowPhase = 1;
+            MainCamera.TP_UI.layer = LayerMask.NameToLayer("NoCollider");
             GameObject.Find("RushSelectPlate").GetComponent<RushSelecter>().moveTrigger = true;
         }
     }
