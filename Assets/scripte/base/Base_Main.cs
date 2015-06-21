@@ -5,6 +5,7 @@ public class Base_Main : MonoBehaviour {
 
     public GameObject blastShade;
 
+    public int unitCount=0;
     public int maxHP;
     public int HP;
     public float HPper;

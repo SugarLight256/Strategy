@@ -45,17 +45,10 @@ public class Rush : MonoBehaviour {
         unitCount = 0;
     }
 
-    public void SetUnit()
+    public void SetUnit(List<GameObject> unitTmp)
     {
         unit_zako Unit_Zako;
-        if (IsPlayer)
-        {
-            Unit = new List<GameObject>(GameObject.FindGameObjectsWithTag("Selected_Unit"));
-        }
-        else
-        {
-
-        }
+        Unit =new List<GameObject>(unitTmp);
         speed = Unit[0].GetComponent<unit_zako>().Max_Speed;
         for (int i = 1; i < Unit.Count + 1; i++)//iは3行下のposの名前に利用するため1だけ増やしておく.
         {
