@@ -25,6 +25,11 @@ public class Base_Main : MonoBehaviour {
 	    
 	}
 
+    public void ReBullPer()
+    {
+        bullPer = (float)bull / maxBull;
+    }
+
     void OnTriggerEnter2D(Collider2D c)
     {
         --HP;

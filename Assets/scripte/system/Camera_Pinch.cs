@@ -108,6 +108,7 @@ public class Camera_Pinch : MonoBehaviour {
         {//拡大中ではなく一本タッチでスライドまたはダブルタッチでセレクト.
             if (Input.touches[0].phase == TouchPhase.Began)
             {
+                SelectedObj = null;
                 if (IsTap == true && timer <= selectTime)
                 {//セレクトBox表示.
 

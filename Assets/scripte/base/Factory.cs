@@ -40,6 +40,7 @@ public class Factory : MonoBehaviour {
                 unitZako.maxBull = baseMain.bull;
                 baseMain.bull = 0;
             }
+            baseMain.ReBullPer();
             if (!IsPlayer)
             {
                 aiManager.SetRushUnit(objTmp);

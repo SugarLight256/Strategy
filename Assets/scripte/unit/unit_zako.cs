@@ -60,7 +60,7 @@ public class unit_zako : MonoBehaviour {
         }
         if (Rush != null)
         {
-            if (Vector2.Distance(transform.position, RushPos) < speed/(speed*1.5))
+            if (Vector2.Distance(transform.position, RushPos) < 0.1*speed)
             {
                 transform.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
                 transform.rotation = Rush.transform.rotation;
