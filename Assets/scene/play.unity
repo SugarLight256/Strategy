@@ -734,6 +734,9 @@ MonoBehaviour:
   maxHP: 1000
   HP: 0
   HPper: 0
+  maxBull: 10000
+  bull: 0
+  bullPer: 0
 --- !u!58 &415859489
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1113,6 +1116,9 @@ MonoBehaviour:
   maxHP: 1000
   HP: 0
   HPper: 0
+  maxBull: 10000
+  bull: 0
+  bullPer: 0
 --- !u!58 &606505830
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1253,6 +1259,9 @@ MonoBehaviour:
   maxHP: 1000
   HP: 0
   HPper: 0
+  maxBull: 20000
+  bull: 0
+  bullPer: 0
 --- !u!58 &988680756
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2255,6 +2264,9 @@ MonoBehaviour:
   maxHP: 1000
   HP: 0
   HPper: 0
+  maxBull: 10000
+  bull: 0
+  bullPer: 0
 --- !u!58 &1846774437
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -8,7 +8,9 @@ public class Factory : MonoBehaviour {
 	private int cool;
 	public GameObject[] unit;
     public GameObject AI_Manager;
+    private Base_Main baseMain;
     private AI_Manager aiManager;
+    private unit_zako unitZako;
 
 	// Use this for initialization
     void Start()
@@ -18,14 +20,26 @@ public class Factory : MonoBehaviour {
         {
             aiManager = AI_Manager.GetComponent<AI_Manager>();
         }
+        baseMain = GetComponent<Base_Main>();
+
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-		if (coolMax <= cool) {
+		if (coolMax <= cool && baseMain.bull > 0) {
 			GameObject objTmp = GameObject.Instantiate (unit[0], transform.position, transform.rotation)as GameObject;
-            GetComponent<Base_Main>().unitCount++;
+            baseMain.unitCount++;
+            unitZako = objTmp.GetComponent<unit_zako>();
+            if (baseMain.bull > unitZako.maxBull)
+            {
+                baseMain.bull -= unitZako.maxBull;
+            }
+            else
+            {
+                unitZako.maxBull = baseMain.bull;
+                baseMain.bull = 0;
+            }
             if (!IsPlayer)
             {
                 aiManager.SetRushUnit(objTmp);

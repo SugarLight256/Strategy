@@ -226,6 +226,8 @@ MonoBehaviour:
   nowPhase: 0
   maxHP: 10
   HP: 0
+  bull: 0
+  maxBull: 100
   speed: 0
   Max_Speed: 50
   moveTrigger: 0
@@ -254,8 +256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Bull: {fileID: 124008, guid: e6e63e4d87e55204ea5e9a2d32c72047, type: 2}
-  bull: 100
-  maxBull: 100
   cool: 0
   maxCool: 20
   range: 105

@@ -5,9 +5,8 @@ public class Weapon_Main : MonoBehaviour
 {
     public GameObject Bull;
     private GameObject target;
+    private unit_zako unitZako;
 
-    public int bull;
-    public int maxBull;
     public int cool;
     public int maxCool;
 
@@ -17,7 +16,7 @@ public class Weapon_Main : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        unitZako = transform.parent.GetComponent<unit_zako>();
     }
 
     // Update is called once per frame
@@ -25,12 +24,12 @@ public class Weapon_Main : MonoBehaviour
     {
         transform.localPosition = Vector3.zero;
 
-        if ((cool >= maxCool) && (fire == true) && (bull > 0) && target != null)
+        if ((cool >= maxCool) && (fire == true) && (unitZako.bull > 0) && target != null)
         {
             cool = 0;
             Fire();
         }
-        else if (fire == true && target != null && bull > 0)
+        else if (fire == true && target != null && unitZako.bull > 0)
         {
             ++cool;
         }
@@ -44,7 +43,7 @@ public class Weapon_Main : MonoBehaviour
     {
         Bull_Main tmpCmp;
         tmpCmp =(Instantiate(Bull, transform.position, transform.rotation) as GameObject).GetComponent<Bull_Main>();
-        bull--;
+        unitZako.bull--;
         tmpCmp.SetSpeed(target.transform.position);
         tmpCmp.range = range;
         tmpCmp.shotPos = transform.position;

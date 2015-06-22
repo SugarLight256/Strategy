@@ -14,6 +14,8 @@ public class unit_zako : MonoBehaviour {
     public int nowPhase=0;//0:単機行動 1:ラッシュ 2:追尾行動
     public int maxHP;
     public int HP;
+    public int bull;
+    public int maxBull;
 
     public float speed;
     public float Max_Speed;
@@ -23,6 +25,7 @@ public class unit_zako : MonoBehaviour {
     void Start () {
         def_tag = transform.tag;
         HP = maxHP;
+        bull = maxBull;
 	}
 
     // Update is called once per frame

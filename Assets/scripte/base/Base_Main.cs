@@ -9,10 +9,15 @@ public class Base_Main : MonoBehaviour {
     public int maxHP;
     public int HP;
     public float HPper;
+    public int maxBull;
+    public int bull;
+    public float bullPer;
 	// Use this for initialization
 	void Start () {
         HP = maxHP;
         HPper = 100;
+        bull = maxBull;
+        bullPer = 100;
 	}
 	
 	// Update is called once per frame
