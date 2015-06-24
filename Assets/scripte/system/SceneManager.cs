@@ -20,7 +20,6 @@ public class SceneManager : MonoBehaviour {
             tmpOperation = null;
             changed = true;
             allowChange = false;
-            print("a");
         }
 	}
 
