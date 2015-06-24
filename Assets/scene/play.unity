@@ -668,7 +668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847cea15602653940b20c4ee90812983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolMax: 300
+  coolMax: 50
   IsPlayer: 1
   unit:
   - {fileID: 147784, guid: 4f18fb1702d2d19459078a912dce6726, type: 2}
@@ -693,7 +693,7 @@ MonoBehaviour:
   maxHP: 1000
   HP: 0
   HPper: 0
-  maxBull: 10000
+  maxBull: 30000
   bull: 0
   bullPer: 0
 --- !u!58 &415859489
@@ -1124,7 +1124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847cea15602653940b20c4ee90812983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolMax: 300
+  coolMax: 150
   IsPlayer: 0
   unit:
   - {fileID: 103678, guid: 60da2b5afa7c4714d8d5f26e23a8a416, type: 2}
@@ -1939,7 +1939,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22496254, guid: cec1b276ee5029242a3ad3ad81b02c6a, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 22496254, guid: cec1b276ee5029242a3ad3ad81b02c6a, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -2454,7 +2454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 847cea15602653940b20c4ee90812983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coolMax: 300
+  coolMax: 150
   IsPlayer: 0
   unit:
   - {fileID: 108576, guid: 8617094809a1a4e448332cd6fe3d56f0, type: 2}

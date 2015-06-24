@@ -58,7 +58,10 @@ public class Rush : MonoBehaviour {
             Unit_Zako.Rush = transform.gameObject;
             Unit_Zako.moveTrigger = true;
             Unit_Zako.set_speed(speed);
-            Unit[i - 1].transform.FindChild("selectCollider").GetComponent<unit_select>().IsSelected = false;
+            if (Unit[i - 1].transform.tag == "GREEN_Unit")
+            {
+                Unit[i - 1].transform.FindChild("selectCollider").GetComponent<unit_select>().IsSelected = false;
+            }
             Unit[i - 1].GetComponent<unit_zako>().ReTag();
         }
     }

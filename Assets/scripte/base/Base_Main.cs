@@ -4,6 +4,7 @@ using System.Collections;
 public class Base_Main : MonoBehaviour {
 
     public GameObject blastShade;
+    public GameObject sceneManager;
 
     public int unitCount=0;
     public int maxHP;
@@ -18,6 +19,7 @@ public class Base_Main : MonoBehaviour {
         HPper = 100;
         bull = maxBull;
         bullPer = 100;
+        sceneManager = GameObject.Find("SceneManager");
 	}
 	
 	// Update is called once per frame
@@ -37,6 +39,10 @@ public class Base_Main : MonoBehaviour {
         if (HP <= 0)
         {
             Instantiate(blastShade, transform.position, transform.rotation);
+            if (transform.gameObject.layer == LayerMask.NameToLayer("GREEN_Base"))
+            {
+                sceneManager.GetComponent<SceneManager>().sceneChange("menu");
+            }
             Destroy(transform.gameObject);
             print("Destroy");
         }
