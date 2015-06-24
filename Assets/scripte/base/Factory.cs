@@ -27,7 +27,7 @@ public class Factory : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (coolMax <= cool && baseMain.bull > 0 && baseMain.unitCount<=100) {
+		if (coolMax <= cool && baseMain.bull > 0 && baseMain.unitCount<=100 ) {
 			GameObject objTmp = GameObject.Instantiate (unit[0], transform.position, transform.rotation)as GameObject;
             baseMain.unitCount++;
             unitZako = objTmp.GetComponent<unit_zako>();
