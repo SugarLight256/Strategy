@@ -7,6 +7,8 @@ public class Rush : MonoBehaviour {
     public List<GameObject> Unit;
 
     public Camera_Pinch MainCamera;
+    public GameObject target;
+    public GameObject aiManager;
 
     private Vector2 direction;
     private Vector2 movePoint;
@@ -40,6 +42,10 @@ public class Rush : MonoBehaviour {
         if (unitCount <= 0)
         {
             Destroy(transform.gameObject);
+        }
+        if (aiManager != null && target == null)
+        {
+            SetPos(aiManager.GetComponent<AI_Manager>().SetRushGo());
         }
         Move();
         unitCount = 0;
@@ -106,9 +112,22 @@ public class Rush : MonoBehaviour {
         ready = 0;
     }
 
-    public void SetPos(Vector2 newMovePoint)
+    public void SetPos(GameObject nextTarget)
     {
-        movePoint = newMovePoint;
+        target = nextTarget;
+        movePoint = target.transform.position;
+        x = movePoint.x;
+        y = movePoint.y;
+        direction = new Vector2(x - transform.position.x, y - transform.position.y).normalized;
+        if (!IsPlayer)
+        {
+            transform.tag = "Enemy_Rush";
+        }
+    }
+
+    public void SetPos(Vector2 nextTarget)
+    {
+        movePoint = nextTarget;
         x = movePoint.x;
         y = movePoint.y;
         direction = new Vector2(x - transform.position.x, y - transform.position.y).normalized;
