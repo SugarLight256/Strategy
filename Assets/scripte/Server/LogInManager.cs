@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using NCMB;
-using NCMB.Internal;
 
 public class LogInManager : MonoBehaviour {
 
@@ -33,7 +31,7 @@ public class LogInManager : MonoBehaviour {
     public void setUser()
     {
         id = SystemInfo.deviceUniqueIdentifier;
-        pw = "pw_" + 12345;
+        pw = SystemInfo.deviceName;
         PlayerPrefs.SetString("id", id);
         PlayerPrefs.SetString("pw", pw);
         PlayerPrefs.Save();

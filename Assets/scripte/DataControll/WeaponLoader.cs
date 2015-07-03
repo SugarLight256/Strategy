@@ -37,7 +37,7 @@ public class WeaponLoader : MonoBehaviour {
                     WeaponData.Add((IDictionary)((IList)Json.Deserialize((string)result[0]["WeaponData"]))[i]);
                 }
 
-                Debug.Log(WeaponData[0]["name"]);
+                Debug.Log(WeaponData[1]["name"]);
             }
         });
     }
