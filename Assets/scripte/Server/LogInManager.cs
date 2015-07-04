@@ -26,7 +26,9 @@ public class LogInManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (userAuth.currentPlayer() != null && WeaponLoader.WeaponData.Count > 0 && WeaponLoader.WeaponBox.Count > 0 && UnitLoader.UnitBox.Count > 0)
+        if (userAuth.currentPlayer() != null && WeaponLoader.WeaponData.Count > 0
+            && WeaponLoader.WeaponBox.Count > 0 && UnitLoader.UnitBox.Count > 0
+            && UnitLoader.FactoryUnit.Count > 0)
         {
             Debug.Log("Load Scene : Menu");
             Application.LoadLevel("menu");

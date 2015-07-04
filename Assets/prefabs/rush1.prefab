@@ -650,9 +650,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Unit: []
-  my: {fileID: 116222}
+  MainCamera: {fileID: 0}
+  target: {fileID: 0}
+  aiManager: {fileID: 0}
   moveTrigger: 0
-  unitCount: 13833
+  IsPlayer: 0
+  unitCount: 0
   speed: 0
 --- !u!212 &21207886
 SpriteRenderer:

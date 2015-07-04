@@ -120,19 +120,33 @@ public class UnitLoader : MonoBehaviour {
         {
             if (e != null)
             {
+                Debug.Log(e);
             }
             else
             {
                 if (result.Count > 0)
                 {
-                    FactoryUnit = (IList)Json.Deserialize((string)result[0]["FactoryUnit"]);
-                    Debug.Log("FactoryUnit Load Succes");
+                    Debug.Log("FactoryUnit Start loading...");
+                    for (int i = 0; i < 5; i++)
+                    {
+                        if (((IList)Json.Deserialize((string)result[0]["FactoryUnit"]))[i] != null)
+                        {
+                            FactoryUnit =(IList)Json.Deserialize((string)result[0]["FactoryUnit"]);
+                        }
+
+                    }
                 }
                 else
                 {
                     KiiBucket userBucket = KiiUser.CurrentUser.Bucket("FactoryUnit");
                     KiiObject facObj = userBucket.NewKiiObject("FactoryUnit");
-                    facObj["FactoryUnit"] = Json.Serialize( new List<int>{ 0 });
+                    List<int> tmpList = new List<int>();
+                    tmpList.Add(0);
+                    tmpList.Add(-1);
+                    tmpList.Add(-1);
+                    tmpList.Add(-1);
+                    tmpList.Add(-1);
+                    facObj["FactoryUnit"] = Json.Serialize(tmpList);
                     facObj.SaveAllFields(true, (KiiObject savedObj, Exception e2) =>
                     {
                         if (e != null)

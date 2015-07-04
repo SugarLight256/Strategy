@@ -17,6 +17,7 @@ public class unit_zako : MonoBehaviour {
     public int HP;
     public int bull;
     public int maxBull;
+    public int knd;
 
     public float speed;
     public float Max_Speed;

@@ -490,8 +490,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userAuth: {fileID: 0}
-  weaponLoader: {fileID: 0}
-  unitLoader: {fileID: 0}
   id: 
   pw: 
   mail: 

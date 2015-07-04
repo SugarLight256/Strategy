@@ -224,12 +224,13 @@ MonoBehaviour:
   - Blue_Bull
   - Red_Bull
   nowPhase: 0
-  maxHP: 10
+  maxHP: 0
   HP: 0
   bull: 0
-  maxBull: 100
+  maxBull: 0
+  knd: 0
   speed: 0
-  Max_Speed: 50
+  Max_Speed: 0
   moveTrigger: 0
 --- !u!114 &11454670
 MonoBehaviour:
