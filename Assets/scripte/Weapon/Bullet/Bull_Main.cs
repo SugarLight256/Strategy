@@ -15,7 +15,8 @@ public class Bull_Main : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-
+        shotPos = transform.position;
+        range = int.Parse((string)WeaponLoader.WeaponData[0]["range"]);
     }
 
     // Update is called once per frame

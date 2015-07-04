@@ -216,7 +216,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bull: {fileID: 124008, guid: 9d84a509f9d153f409ad5d45a5f10f79, type: 2}
   cool: 0
-  maxCool: 20
+  maxCool: 100
   range: 105
   fire: 0
 --- !u!114 &11408576
@@ -239,7 +239,6 @@ MonoBehaviour:
   - Blue_Bull
   - Green_Bull
   - Red_Bull
-  color: {r: 0, g: 0, b: 0, a: 0}
   nowPhase: 0
   maxHP: 10
   HP: 10

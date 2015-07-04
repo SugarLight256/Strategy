@@ -7,8 +7,9 @@ using MiniJSON;
 
 public class UnitLoader : MonoBehaviour {
 
-    public List<IDictionary> UnitData = new List<IDictionary>();
-    public List<IDictionary> UnitBox = new List<IDictionary>();
+    public static List<IDictionary> UnitData = new List<IDictionary>();
+    public static List<IDictionary> UnitBox = new List<IDictionary>();
+    public static IList FactoryUnit;
     private List<IDictionary> UnitBoxDef = new List<IDictionary>();
 	// Use this for initialization
 	void Start () {
@@ -111,5 +112,44 @@ public class UnitLoader : MonoBehaviour {
                 }
             }
         });
+    }
+
+    public void FactoryUnitLoad()
+    {
+        KiiUser.CurrentUser.Bucket("FactoryUnit").Query(new KiiQuery(), (KiiQueryResult<KiiObject> result, Exception e) =>
+        {
+            if (e != null)
+            {
+            }
+            else
+            {
+                if (result.Count > 0)
+                {
+                    FactoryUnit = (IList)Json.Deserialize((string)result[0]["FactoryUnit"]);
+                    Debug.Log("FactoryUnit Load Succes");
+                }
+                else
+                {
+                    KiiBucket userBucket = KiiUser.CurrentUser.Bucket("FactoryUnit");
+                    KiiObject facObj = userBucket.NewKiiObject("FactoryUnit");
+                    facObj["FactoryUnit"] = Json.Serialize( new List<int>{ 0 });
+                    facObj.SaveAllFields(true, (KiiObject savedObj, Exception e2) =>
+                    {
+                        if (e != null)
+                        {
+                            Debug.LogWarning("FactoryUnit couldn't create");
+                            Debug.LogError(e2);
+                        }
+                        else
+                        {
+                            Debug.Log("FactoryUnit create Succes");
+                            FactoryUnitLoad();
+                        }
+                    });
+                }
+            }
+        });
+
+
     }
 }

@@ -257,7 +257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bull: {fileID: 124008, guid: b7492e3ba9f73bb4a9ff1e1fce6727d7, type: 2}
   cool: 0
-  maxCool: 20
+  maxCool: 100
   range: 105
   fire: 0
 --- !u!212 &21247784

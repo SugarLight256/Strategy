@@ -24,14 +24,14 @@ public class Weapon_Main : MonoBehaviour
     {
         transform.localPosition = Vector3.zero;
 
-        if ((cool >= maxCool) && (fire == true) && (unitZako.bull > 0) && target != null)
+        if ((cool <= 0) && (fire == true) && (unitZako.bull > 0) && target != null)
         {
-            cool = 0;
+            cool = maxCool;
             Fire();
         }
         else if (fire == true && target != null && unitZako.bull > 0)
         {
-            ++cool;
+            cool--;
         }
         else if (fire == false)
         {
@@ -41,12 +41,7 @@ public class Weapon_Main : MonoBehaviour
 
     private void Fire()
     {
-        Bull_Main tmpCmp;
-        tmpCmp =(Instantiate(Bull, transform.position, transform.rotation) as GameObject).GetComponent<Bull_Main>();
-        unitZako.bull--;
-        tmpCmp.SetTarget(target);
-        tmpCmp.range = range;
-        tmpCmp.shotPos = transform.position;
+        (Instantiate(Bull, transform.position, transform.rotation) as GameObject).SendMessage("SetTarget",target);
     }
 
     void OnTriggerStay2D(Collider2D c)

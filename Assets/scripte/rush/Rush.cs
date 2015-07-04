@@ -82,22 +82,14 @@ public class Rush : MonoBehaviour {
                 ready++;
             }
         }
+
         movePoint = target.transform.position;
         x = movePoint.x;
         y = movePoint.y;
         direction = new Vector2(x - transform.position.x, y - transform.position.y).normalized;
-        if (ready >= Unit.Count)
+        if (ready >= Unit.Count && Vector2.Distance(transform.position, movePoint) > 0.1*speed)
         {
             transform.GetComponent<Rigidbody2D>().velocity = direction * speed;
-        }
-        else
-        {
-            transform.GetComponent<Rigidbody2D>().velocity = Vector3.zero;
-            transform.GetComponent<Rigidbody2D>().angularVelocity = 0;
-        }
-
-        if (Vector2.Distance(transform.position, movePoint) > 0.1*speed)
-        {
             transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
         }
         else
@@ -123,6 +115,7 @@ public class Rush : MonoBehaviour {
         x = movePoint.x;
         y = movePoint.y;
         direction = new Vector2(x - transform.position.x, y - transform.position.y).normalized;
+        transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
         if (!IsPlayer)
         {
             transform.tag = "Enemy_Rush";

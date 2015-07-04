@@ -50,6 +50,7 @@ public class UserAuth : MonoBehaviour {
                 DataBase.GetComponent<WeaponLoader>().WepBoxLoad();
                 DataBase.GetComponent<UnitLoader>().UnitDataLoad();
                 DataBase.GetComponent<UnitLoader>().UnitBoxLoad();
+                DataBase.GetComponent<UnitLoader>().FactoryUnitLoad();
             }
             else
             {
@@ -76,6 +77,7 @@ public class UserAuth : MonoBehaviour {
                     DataBase.GetComponent<WeaponLoader>().WepBoxLoad();
                     DataBase.GetComponent<UnitLoader>().UnitDataLoad();
                     DataBase.GetComponent<UnitLoader>().UnitBoxLoad();
+                    DataBase.GetComponent<UnitLoader>().FactoryUnitLoad();
                 }
                 else
                 {

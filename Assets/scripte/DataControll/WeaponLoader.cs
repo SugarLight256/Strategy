@@ -7,8 +7,8 @@ using MiniJSON;
 
 public class WeaponLoader : MonoBehaviour {
 
-    public List<IDictionary> WeaponData = new List<IDictionary>();
-    public List<IDictionary> WeaponBox = new List<IDictionary>();
+    public static List<IDictionary> WeaponData = new List<IDictionary>();
+    public static List<IDictionary> WeaponBox = new List<IDictionary>();
     private List<IDictionary> WeaponBoxDef = new List<IDictionary>();
 	// Use this for initialization
     void Start()

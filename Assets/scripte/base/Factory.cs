@@ -8,6 +8,7 @@ public class Factory : MonoBehaviour {
 	private int cool;
 	public GameObject[] unit;
     public GameObject AI_Manager;
+    public int Max_Unit;
     private Base_Main baseMain;
     private AI_Manager aiManager;
     private unit_zako unitZako;

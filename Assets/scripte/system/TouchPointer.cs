@@ -3,11 +3,11 @@ using System.Collections;
 
 public class TouchPointer : MonoBehaviour {
 
-    public Camera camera;
+    public Camera cam;
     public Camera_Pinch pinch;
 	// Use this for initialization
 	void Start () {
-        camera = GameObject.Find("MainCamera").GetComponent<Camera>();
+        cam = GameObject.Find("MainCamera").GetComponent<Camera>();
         pinch = GameObject.Find("MainCamera").GetComponent<Camera_Pinch>();
 	}
 	
@@ -15,7 +15,7 @@ public class TouchPointer : MonoBehaviour {
 	void Update () {
 	    if(Input.touchCount > 0)
         {
-            transform.position =camera.ScreenToWorldPoint(Input.touches[0].position);
+            transform.position =cam.ScreenToWorldPoint(Input.touches[0].position);
         }
 	}
 
