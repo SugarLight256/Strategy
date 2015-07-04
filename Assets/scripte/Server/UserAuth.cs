@@ -6,9 +6,10 @@ using KiiCorp.Cloud.Storage;
 
 public class UserAuth : MonoBehaviour {
 
-    private string currentPlayerName;
+    private string currentPlayerName = null;
     private UserAuth instance = null;
     private bool isLoggingin = false;
+    private GameObject DataBase;
 
     void Awake()
     {
@@ -34,6 +35,7 @@ public class UserAuth : MonoBehaviour {
         {
             Destroy(gameObject);
         }
+        DataBase = GameObject.Find("DataBase");
     }
     
     public void logIn(string id, string pw)
@@ -44,7 +46,13 @@ public class UserAuth : MonoBehaviour {
             {
                 Debug.Log("Log In With:" + id);
                 currentPlayerName = id;
-                Application.LoadLevel("menu");
+                DataBase.GetComponent<WeaponLoader>().WepDataLoad();
+                DataBase.GetComponent<WeaponLoader>().WepBoxLoad();
+            }
+            else
+            {
+                Debug.LogWarning("Log In Failed");
+                logIn(id, pw);
             }
         });
     }
@@ -55,15 +63,15 @@ public class UserAuth : MonoBehaviour {
             KiiUser.Builder builder;
             builder = KiiUser.BuilderWithName(id);
             KiiUser user = builder.Build();
-            Debug.Log("asd");
             user.Register(pw,(KiiUser registeredUser,Exception e)=>
             {
                 if (e == null)
                 {
                     Debug.Log("Sign In With:" + id);
                     currentPlayerName = id;
-                    Application.LoadLevel("menu");
                     isLoggingin = false;
+                    DataBase.GetComponent<WeaponLoader>().WepDataLoad();
+                    DataBase.GetComponent<WeaponLoader>().WepBoxLoad();
                 }
                 else
                 {

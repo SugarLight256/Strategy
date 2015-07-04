@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class LogInManager : MonoBehaviour {
 
     public UserAuth userAuth;
+    public WeaponLoader weaponLoader;
 
     public string id;
     public string pw;
@@ -13,6 +14,7 @@ public class LogInManager : MonoBehaviour {
 	// Use this for initialization
 	void Start (){
         userAuth = FindObjectOfType<UserAuth>();
+        weaponLoader = GameObject.Find("DataBase").GetComponent<WeaponLoader>();
         if (PlayerPrefs.GetString("id","null") == "null")
         {
             setUser();
@@ -26,6 +28,11 @@ public class LogInManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+        if (userAuth.currentPlayer() != null && weaponLoader.WeaponData.Count > 0 && weaponLoader.WeaponBox.Count > 0)
+        {
+            Debug.Log("Load Scene : Menu");
+            Application.LoadLevel("menu");
+        }
 	}
 
     public void setUser()
