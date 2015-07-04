@@ -10,6 +10,7 @@ public class unit_zako : MonoBehaviour {
 
     public string def_tag;
     public string[] enemyBull;
+    public Color color;
 
     public int nowPhase=0;//0:単機行動 1:ラッシュ 2:追尾行動
     public int maxHP;

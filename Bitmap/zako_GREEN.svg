@@ -37,8 +37,8 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="3.959798"
-     inkscape:cx="205.69785"
-     inkscape:cy="679.50551"
+     inkscape:cx="292.82269"
+     inkscape:cy="689.60704"
      inkscape:document-units="px"
      inkscape:current-layer="g3774"
      showgrid="true"
@@ -69,13 +69,13 @@
      inkscape:groupmode="layer"
      id="layer1">
     <path
-       style="fill:#ff8400;stroke:#ff8f00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1"
        d="m 300,317.36218 25,60 -25,-20 -25,20 z"
        id="path2991"
        inkscape:connector-curvature="0"
-       inkscape:export-filename="Z:\Work\Strategy\Bitmap\zako_ORANGE.png"
-       inkscape:export-xdpi="1800"
-       inkscape:export-ydpi="1800" />
+       inkscape:export-filename="Z:\Work\Strategy\Bitmap\zako.png"
+       inkscape:export-xdpi="1799.1371"
+       inkscape:export-ydpi="1799.1371" />
   </g>
   <g
      id="g3774"
@@ -86,9 +86,9 @@
        inkscape:connector-curvature="0"
        id="path3776"
        d="m 300,317.36218 25,60 -25,-20 -25,20 z"
-       style="fill:#ff8400;fill-opacity:1;stroke:#ff8f00;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3806)"
-       inkscape:export-filename="Z:\Work\Strategy\Bitmap\zako_ORANGE.png"
-       inkscape:export-xdpi="1800"
-       inkscape:export-ydpi="1800" />
+       style="fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;filter:url(#filter3806)"
+       inkscape:export-filename="Z:\Work\Strategy\Bitmap\zako.png"
+       inkscape:export-xdpi="1799.1371"
+       inkscape:export-ydpi="1799.1371" />
   </g>
 </svg>
