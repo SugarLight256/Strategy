@@ -6,6 +6,7 @@ public class Bull_Main : MonoBehaviour
     public Vector2 direction;
     public Vector2 shotPos;
     private GameObject target;
+    private Weapon_Main parent;
 
     public int atk;
     public int speed;
@@ -16,7 +17,9 @@ public class Bull_Main : MonoBehaviour
     void Start()
     {
         shotPos = transform.position;
-        range = int.Parse((string)WeaponLoader.WeaponData[0]["range"]);
+        range = parent.range;
+        target = parent.target;
+        SetTarget(target);
     }
 
     // Update is called once per frame
@@ -50,6 +53,11 @@ public class Bull_Main : MonoBehaviour
         direction = new Vector2(x, y).normalized;
         transform.GetComponent<Rigidbody2D>().velocity = direction * speed;
         transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
+    }
+
+    public void SetParent(Weapon_Main pr)
+    {
+        parent = pr;
     }
 
     void OnTriggerEnter2D(Collider2D c)

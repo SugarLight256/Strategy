@@ -4,11 +4,12 @@ using System.Collections;
 public class Weapon_Main : MonoBehaviour
 {
     public GameObject Bull;
-    private GameObject target;
+    public GameObject target;
     private unit_zako unitZako;
 
     public int cool;
     public int maxCool;
+    public int atk;
 
     public float range;
 
@@ -41,7 +42,7 @@ public class Weapon_Main : MonoBehaviour
 
     private void Fire()
     {
-        (Instantiate(Bull, transform.position, transform.rotation) as GameObject).SendMessage("SetTarget",target);
+        (Instantiate(Bull, transform.position, transform.rotation) as GameObject).SendMessage("SetParent",this);
     }
 
     void OnTriggerStay2D(Collider2D c)

@@ -20,24 +20,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &154958
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
-  m_Component:
-  - 4: {fileID: 427902}
-  - 50: {fileID: 5005690}
-  - 58: {fileID: 5853746}
-  - 114: {fileID: 11433178}
-  m_Layer: 9
-  m_Name: selectCollider
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &156258
 GameObject:
   m_ObjectHideFlags: 0
@@ -63,10 +45,9 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107280}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.30089092, y: -119.436958, z: 0}
+  m_LocalPosition: {x: 326.24054, y: -866.043396, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
-  - {fileID: 427902}
   - {fileID: 408802}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -81,34 +62,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 407280}
-  m_RootOrder: 1
---- !u!4 &427902
-Transform:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 154958}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 407280}
   m_RootOrder: 0
---- !u!50 &5005690
-Rigidbody2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 154958}
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
-  m_GravityScale: 0
-  m_FixedAngle: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
 --- !u!50 &5011676
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -152,19 +106,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 20
---- !u!58 &5853746
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 154958}
-  m_Enabled: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: .5
 --- !u!60 &6022084
 PolygonCollider2D:
   m_ObjectHideFlags: 1
@@ -214,7 +155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 102e98c5c2e18014d8e03c9a48554a95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  child: {fileID: 154958}
+  child: {fileID: 0}
   Rush: {fileID: 0}
   blastShard: {fileID: 126058, guid: 9c85783c02aee324c861b8b8983df271, type: 2}
   RushPos: {x: 0, y: 0}
@@ -228,6 +169,7 @@ MonoBehaviour:
   HP: 0
   bull: 0
   maxBull: 100
+  knd: 0
   speed: 0
   Max_Speed: 50
   moveTrigger: 0
@@ -247,19 +189,6 @@ MonoBehaviour:
   maxCool: 100
   range: 105
   fire: 0
---- !u!114 &11433178
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 154958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab1aff5111eb95143be76eb61a86440e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  IsSelected: 0
-  Rush_Manager: {fileID: 0}
 --- !u!212 &21207280
 SpriteRenderer:
   m_ObjectHideFlags: 1
