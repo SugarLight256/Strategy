@@ -117,31 +117,4 @@ public class WeaponLoader : MonoBehaviour {
             }
         });
     }
-
-    public void GetDefBox()
-    {
-        Kii.Bucket("WeaponBoxDef").Query(new KiiQuery(), (KiiQueryResult<KiiObject> result, Exception e) =>
-        {
-            Debug.Log("WeaponBoxDef query result" + result.Count);
-            if (e != null)
-            {
-                Debug.Log(e);
-            }
-            else
-            {
-                for (int i = 0; i < ((IList)Json.Deserialize((string)result[0]["WeaponBoxDef"])).Count; i++)
-                {
-                    WeaponBoxDef.Add((IDictionary)((IList)Json.Deserialize((string)result[0]["WeaponBoxDef"]))[i]);
-                }
-                if (WeaponBoxDef.Count > 0)
-                {
-                    Debug.Log("WeaponBox default data Load Succes");
-                }
-                else
-                {
-                    Debug.LogWarning("WeaponBox default data Load Failed");
-                }               
-            }
-        });
-    }
 }

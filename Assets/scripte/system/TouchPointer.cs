@@ -3,23 +3,25 @@ using System.Collections;
 
 public class TouchPointer : MonoBehaviour {
 
-    public GameObject Camera;
+    public Camera camera;
+    public Camera_Pinch pinch;
 	// Use this for initialization
 	void Start () {
-
+        camera = GameObject.Find("MainCamera").GetComponent<Camera>();
+        pinch = GameObject.Find("MainCamera").GetComponent<Camera_Pinch>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 	    if(Input.touchCount > 0)
         {
-            transform.position =Camera.GetComponent<Camera>().ScreenToWorldPoint(Input.touches[0].position);
+            transform.position =camera.ScreenToWorldPoint(Input.touches[0].position);
         }
 	}
 
     void OnTriggerStay2D(Collider2D c)
     {
-        Camera.GetComponent<Camera_Pinch>().SelectedObj = c.gameObject;
+        pinch.SelectedObj = c.gameObject;
     }
 
 }

@@ -82,6 +82,10 @@ public class Rush : MonoBehaviour {
                 ready++;
             }
         }
+        movePoint = target.transform.position;
+        x = movePoint.x;
+        y = movePoint.y;
+        direction = new Vector2(x - transform.position.x, y - transform.position.y).normalized;
         if (ready >= Unit.Count)
         {
             transform.GetComponent<Rigidbody2D>().velocity = direction * speed;

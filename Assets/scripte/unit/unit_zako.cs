@@ -7,10 +7,10 @@ public class unit_zako : MonoBehaviour {
     public GameObject Rush;
     public GameObject blastShard;
     public Vector2 RushPos;
+    private Color defColor;
 
     public string def_tag;
     public string[] enemyBull;
-    public Color color;
 
     public int nowPhase=0;//0:単機行動 1:ラッシュ 2:追尾行動
     public int maxHP;
@@ -27,6 +27,7 @@ public class unit_zako : MonoBehaviour {
         def_tag = transform.tag;
         HP = maxHP;
         bull = maxBull;
+        defColor = GetComponent<SpriteRenderer>().color;
 	}
 
     // Update is called once per frame
@@ -90,7 +91,7 @@ public class unit_zako : MonoBehaviour {
         }
         else
         {
-            this.GetComponent<SpriteRenderer>().color = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+            this.GetComponent<SpriteRenderer>().color = defColor;
         }
     }
 

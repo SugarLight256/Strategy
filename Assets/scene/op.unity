@@ -271,6 +271,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 469518653}
   - 114: {fileID: 469518654}
+  - 114: {fileID: 469518655}
   m_Layer: 0
   m_Name: DataBase
   m_TagString: Untagged
@@ -299,6 +300,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: df98f8956a6a0514d8990f68bfbfff0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &469518655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 469518652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 286c4e4d09fff9a4688409f12df0c8ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &626277410
@@ -478,6 +490,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   userAuth: {fileID: 0}
+  weaponLoader: {fileID: 0}
+  unitLoader: {fileID: 0}
   id: 
   pw: 
   mail: 

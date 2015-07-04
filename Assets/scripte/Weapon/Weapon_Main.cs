@@ -44,7 +44,7 @@ public class Weapon_Main : MonoBehaviour
         Bull_Main tmpCmp;
         tmpCmp =(Instantiate(Bull, transform.position, transform.rotation) as GameObject).GetComponent<Bull_Main>();
         unitZako.bull--;
-        tmpCmp.SetSpeed(target.transform.position);
+        tmpCmp.SetTarget(target);
         tmpCmp.range = range;
         tmpCmp.shotPos = transform.position;
     }

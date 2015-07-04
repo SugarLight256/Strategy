@@ -17,7 +17,7 @@
    inkscape:export-filename="Z:\Work\Strategy\Bitmap\Shot_Blue.png"
    inkscape:export-xdpi="352.53311"
    inkscape:export-ydpi="352.53311"
-   sodipodi:docname="新規ドキュメント 1">
+   sodipodi:docname="Shot_MG.svg">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -28,16 +28,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.90509668"
-     inkscape:cx="378.77928"
-     inkscape:cy="442.92625"
+     inkscape:cx="151.17928"
+     inkscape:cy="529.21791"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="1018"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1" />
+     inkscape:window-x="-32000"
+     inkscape:window-y="-32000"
+     inkscape:window-maximized="0" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -55,13 +55,13 @@
      inkscape:groupmode="layer"
      id="layer1">
     <rect
-       style="fill:#0000ff;fill-opacity:1;stroke:none"
+       style="fill:#ffffff;fill-opacity:1;stroke:none"
        id="rect2985"
        width="72.525375"
        height="227.80197"
        x="200"
        y="438.68195"
-       inkscape:export-filename="Z:\Work\Strategy\Bitmap\Shot_Blue.png"
+       inkscape:export-filename="Z:\Work\Strategy\Bitmap\MGShot.png"
        inkscape:export-xdpi="352.53311"
        inkscape:export-ydpi="352.53311" />
   </g>

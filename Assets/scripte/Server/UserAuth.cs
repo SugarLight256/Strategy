@@ -48,6 +48,8 @@ public class UserAuth : MonoBehaviour {
                 currentPlayerName = id;
                 DataBase.GetComponent<WeaponLoader>().WepDataLoad();
                 DataBase.GetComponent<WeaponLoader>().WepBoxLoad();
+                DataBase.GetComponent<UnitLoader>().UnitDataLoad();
+                DataBase.GetComponent<UnitLoader>().UnitBoxLoad();
             }
             else
             {
@@ -72,6 +74,8 @@ public class UserAuth : MonoBehaviour {
                     isLoggingin = false;
                     DataBase.GetComponent<WeaponLoader>().WepDataLoad();
                     DataBase.GetComponent<WeaponLoader>().WepBoxLoad();
+                    DataBase.GetComponent<UnitLoader>().UnitDataLoad();
+                    DataBase.GetComponent<UnitLoader>().UnitBoxLoad();
                 }
                 else
                 {

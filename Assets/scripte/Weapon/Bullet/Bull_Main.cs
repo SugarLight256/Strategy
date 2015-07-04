@@ -3,11 +3,13 @@ using System.Collections;
 
 public class Bull_Main : MonoBehaviour
 {
-    private Vector2 direction;
+    public Vector2 direction;
     public Vector2 shotPos;
+    private GameObject target;
 
     public int atk;
     public int speed;
+    public int knd;
 
     public float range;
     // Use this for initialization
@@ -28,12 +30,20 @@ public class Bull_Main : MonoBehaviour
 
     private void Move()
     {
-
+        switch (knd)
+        {
+            case 1:
+                break;
+            default:
+                break;
+        }
     }
 
-    public void SetSpeed(Vector2 targetPos)
+    public void SetTarget(GameObject newTarget)
     {
+        target = newTarget;
         float x, y;
+        Vector2 targetPos = target.transform.position;
         x = targetPos.x - transform.position.x;
         y = targetPos.y - transform.position.y;
         direction = new Vector2(x, y).normalized;
