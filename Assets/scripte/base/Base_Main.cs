@@ -34,17 +34,20 @@ public class Base_Main : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D c)
     {
-        --HP;
-        HPper = (float)HP / maxHP;
-        if (HP <= 0)
+        if (c.tag != transform.tag)
         {
-            Instantiate(blastShade, transform.position, transform.rotation);
-            if (transform.gameObject.layer == LayerMask.NameToLayer("GREEN_Base"))
+            --HP;
+            HPper = (float)HP / maxHP;
+            if (HP <= 0)
             {
-                sceneManager.GetComponent<SceneManager>().sceneChange("menu");
+                Instantiate(blastShade, transform.position, transform.rotation);
+                if (transform.gameObject.layer == LayerMask.NameToLayer("GREEN_Base"))
+                {
+                    sceneManager.GetComponent<SceneManager>().sceneChange("menu");
+                }
+                Destroy(transform.gameObject);
+                print("Destroy");
             }
-            Destroy(transform.gameObject);
-            print("Destroy");
         }
     }
 }

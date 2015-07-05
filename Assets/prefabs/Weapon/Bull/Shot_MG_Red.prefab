@@ -12,9 +12,9 @@ GameObject:
   - 50: {fileID: 5033562}
   - 61: {fileID: 6149362}
   - 114: {fileID: 11407442}
-  m_Layer: 20
+  m_Layer: 13
   m_Name: Shot_MG_Red
-  m_TagString: Red_Bull
+  m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -18,6 +18,7 @@ public class Weapon_Main : MonoBehaviour
     void Start()
     {
         unitZako = transform.parent.GetComponent<unit_zako>();
+        GetComponent<CircleCollider2D>().radius = range/5;
     }
 
     // Update is called once per frame
@@ -47,10 +48,13 @@ public class Weapon_Main : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D c)
     {
-        if (fire == false || target==null)
+        if (c.tag != transform.tag)
         {
-            fire = true;
-            target = c.gameObject;
+            if (fire == false || target == null)
+            {
+                fire = true;
+                target = c.gameObject;
+            }
         }
     }
     void OnTriggerExit2D(Collider2D c)

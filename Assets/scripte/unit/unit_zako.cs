@@ -10,7 +10,6 @@ public class unit_zako : MonoBehaviour {
     private Color defColor;
 
     public string def_tag;
-    public string[] enemyBull;
 
     public int nowPhase=0;//0:単機行動 1:ラッシュ 2:追尾行動
     public int maxHP;
@@ -103,20 +102,16 @@ public class unit_zako : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D c)
     {
-        for (int i = 0; i < enemyBull.Length; i++)
+        if (c.transform.gameObject.layer == LayerMask.NameToLayer("Bull") && c.tag != def_tag)
         {
-            if (c.gameObject.transform.tag == enemyBull[i])
-            {
-                
-                HP -= c.gameObject.GetComponent<Bull_Main>().atk;
+            HP -= c.gameObject.GetComponent<Bull_Main>().atk;
 
-                Destroy(c.gameObject);
+            Destroy(c.gameObject);
+            if (HP <= 0)
+            {
+                Instantiate(blastShard, transform.position, transform.rotation);
+                Destroy(transform.gameObject);
             }
-        }
-        if (HP <= 0)
-        {
-            Instantiate(blastShard, transform.position, transform.rotation);
-            Destroy(transform.gameObject);
         }
     }
 

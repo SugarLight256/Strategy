@@ -234,7 +234,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
 --- !u!1 &285410484
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,9 +369,9 @@ GameObject:
   - 58: {fileID: 415859489}
   - 114: {fileID: 415859487}
   - 114: {fileID: 415859488}
-  m_Layer: 13
+  m_Layer: 11
   m_Name: GREEN_Base
-  m_TagString: Untagged
+  m_TagString: Green
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -919,9 +919,9 @@ GameObject:
   - 58: {fileID: 988680756}
   - 114: {fileID: 988680754}
   - 114: {fileID: 988680755}
-  m_Layer: 12
+  m_Layer: 11
   m_Name: RED_Base
-  m_TagString: Untagged
+  m_TagString: Red
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1878,9 +1878,9 @@ GameObject:
   - 58: {fileID: 1846774437}
   - 114: {fileID: 1846774435}
   - 114: {fileID: 1846774436}
-  m_Layer: 14
+  m_Layer: 11
   m_Name: ORANGE_Base
-  m_TagString: Untagged
+  m_TagString: Orange
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

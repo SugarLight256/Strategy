@@ -8,7 +8,7 @@ public class Bull_Main : MonoBehaviour
     private GameObject target;
     private Weapon_Main parent;
 
-    public int atk;
+    public int atk=1;
     public int speed;
     public int knd;
 
@@ -59,10 +59,4 @@ public class Bull_Main : MonoBehaviour
     {
         parent = pr;
     }
-
-    void OnTriggerEnter2D(Collider2D c)
-    {
-        Destroy(transform.gameObject);
-    }
-
 }
