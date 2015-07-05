@@ -19,6 +19,7 @@ public class Weapon_Main : MonoBehaviour
     {
         unitZako = transform.parent.GetComponent<unit_zako>();
         GetComponent<CircleCollider2D>().radius = range/5;
+        transform.tag = transform.parent.tag;
     }
 
     // Update is called once per frame

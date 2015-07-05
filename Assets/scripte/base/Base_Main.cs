@@ -13,6 +13,8 @@ public class Base_Main : MonoBehaviour {
     public int maxBull;
     public int bull;
     public float bullPer;
+
+    private float destroyCount;
 	// Use this for initialization
 	void Start () {
         HP = maxHP;
@@ -24,7 +26,27 @@ public class Base_Main : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    
+        if (HP<=0)
+        {
+            if (destroyCount % 50 == 0)
+            {
+                float x, y;
+                x = transform.position.x - 50;
+                y = transform.position.y - 50;
+                Vector2 instPos = new Vector2(x + 100 * Random.value, y + 100 * Random.value);
+                Instantiate(blastShade, instPos, transform.rotation);
+                if (destroyCount/100 >= 7)
+                {
+                    Destroy(transform.gameObject);
+                    if (transform.gameObject.layer == LayerMask.NameToLayer("GREEN_Base"))
+                    {
+                        sceneManager.GetComponent<SceneManager>().sceneChange("menu");
+                    }
+                    print("Destroy");
+                }
+            }
+            destroyCount += 1;
+        }
 	}
 
     public void ReBullPer()
@@ -32,22 +54,13 @@ public class Base_Main : MonoBehaviour {
         bullPer = (float)bull / maxBull;
     }
 
+    public void HPCalc(int atk)
+    {
+        HP -= atk;
+        HPper = (float)HP / maxHP;
+    }
+
     void OnTriggerEnter2D(Collider2D c)
     {
-        if (c.tag != transform.tag)
-        {
-            --HP;
-            HPper = (float)HP / maxHP;
-            if (HP <= 0)
-            {
-                Instantiate(blastShade, transform.position, transform.rotation);
-                if (transform.gameObject.layer == LayerMask.NameToLayer("GREEN_Base"))
-                {
-                    sceneManager.GetComponent<SceneManager>().sceneChange("menu");
-                }
-                Destroy(transform.gameObject);
-                print("Destroy");
-            }
-        }
     }
 }

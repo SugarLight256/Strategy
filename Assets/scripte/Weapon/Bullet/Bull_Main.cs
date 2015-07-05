@@ -19,6 +19,8 @@ public class Bull_Main : MonoBehaviour
         shotPos = transform.position;
         range = parent.range;
         target = parent.target;
+        transform.tag = parent.tag;
+        GetComponent<SpriteRenderer>().color = parent.transform.parent.GetComponent<SpriteRenderer>().color;
         SetTarget(target);
     }
 
@@ -58,5 +60,14 @@ public class Bull_Main : MonoBehaviour
     public void SetParent(Weapon_Main pr)
     {
         parent = pr;
+    }
+
+    void OnTriggerEnter2D(Collider2D c)
+    {
+        if (c.tag != transform.tag)
+        {
+            c.gameObject.SendMessage("HPCalc",atk);
+            Destroy(transform.gameObject);
+        }
     }
 }

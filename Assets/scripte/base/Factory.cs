@@ -9,6 +9,7 @@ public class Factory : MonoBehaviour {
 	private GameObject[] unit = new GameObject[5];
     public GameObject[] pref = new GameObject[5];
     public GameObject AI_Manager;
+    public Color def_Color;
     public int Max_Unit;
     private Base_Main baseMain;
     private AI_Manager aiManager;
@@ -36,11 +37,13 @@ public class Factory : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (coolMax <= cool && baseMain.bull > 0 && baseMain.unitCount<=100 ) {
+		if (coolMax <= cool && baseMain.bull > 0 && baseMain.unitCount<=50 ) {
 			GameObject objTmp = GameObject.Instantiate (unit[0], transform.position, transform.rotation)as GameObject;
             baseMain.unitCount++;
-            objTmp.SetActive(true);
             unitZako = objTmp.GetComponent<unit_zako>();
+            unitZako.defColor = def_Color;
+            objTmp.SetActive(true);
+            objTmp.tag = transform.tag;
             if (baseMain.bull > unitZako.maxBull)
             {
                 baseMain.bull -= unitZako.maxBull;

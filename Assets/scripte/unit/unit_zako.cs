@@ -3,11 +3,10 @@ using System.Collections;
 
 public class unit_zako : MonoBehaviour {
 
-    public GameObject child;
     public GameObject Rush;
     public GameObject blastShard;
     public Vector2 RushPos;
-    private Color defColor;
+    public Color defColor;
 
     public string def_tag;
 
@@ -27,7 +26,6 @@ public class unit_zako : MonoBehaviour {
         def_tag = transform.tag;
         HP = maxHP;
         bull = maxBull;
-        defColor = GetComponent<SpriteRenderer>().color;
 	}
 
     // Update is called once per frame
@@ -100,19 +98,18 @@ public class unit_zako : MonoBehaviour {
         transform.tag = def_tag;
     }
 
+    public void HPCalc(int atk)
+    {
+        HP -= atk;
+        if (HP <= 0)
+        {
+            (Instantiate(blastShard, transform.position, transform.rotation) as GameObject).GetComponent<ParticleSystem>().startColor = defColor;
+            Destroy(transform.gameObject);
+        }
+    }
+
     void OnTriggerEnter2D(Collider2D c)
     {
-        if (c.transform.gameObject.layer == LayerMask.NameToLayer("Bull") && c.tag != def_tag)
-        {
-            HP -= c.gameObject.GetComponent<Bull_Main>().atk;
-
-            Destroy(c.gameObject);
-            if (HP <= 0)
-            {
-                Instantiate(blastShard, transform.position, transform.rotation);
-                Destroy(transform.gameObject);
-            }
-        }
     }
 
 }
