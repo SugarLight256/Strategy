@@ -8,7 +8,7 @@ public class Bull_Main : MonoBehaviour
     private GameObject target;
     private Weapon_Main parent;
 
-    public int atk=1;
+    public int atk;
     public int speed;
     public int knd;
 
@@ -20,6 +20,7 @@ public class Bull_Main : MonoBehaviour
         range = parent.range;
         target = parent.target;
         transform.tag = parent.tag;
+        knd = parent.knd;
         GetComponent<SpriteRenderer>().color = parent.transform.parent.GetComponent<SpriteRenderer>().color;
         SetTarget(target);
     }
@@ -27,21 +28,9 @@ public class Bull_Main : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Move();
         if (Vector2.Distance(shotPos, transform.position) > range+30)
         {
             Destroy(transform.gameObject);
-        }
-    }
-
-    private void Move()
-    {
-        switch (knd)
-        {
-            case 1:
-                break;
-            default:
-                break;
         }
     }
 
@@ -60,14 +49,5 @@ public class Bull_Main : MonoBehaviour
     public void SetParent(Weapon_Main pr)
     {
         parent = pr;
-    }
-
-    void OnTriggerEnter2D(Collider2D c)
-    {
-        if (c.tag != transform.tag)
-        {
-            c.gameObject.SendMessage("HPCalc",atk);
-            Destroy(transform.gameObject);
-        }
     }
 }

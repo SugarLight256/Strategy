@@ -141,6 +141,7 @@ MonoBehaviour:
   cool: 0
   maxCool: 100
   atk: 0
+  knd: 0
   range: 100
   fire: 0
 --- !u!114 &11478930

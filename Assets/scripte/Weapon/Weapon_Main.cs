@@ -10,6 +10,7 @@ public class Weapon_Main : MonoBehaviour
     public int cool;
     public int maxCool;
     public int atk;
+    public short knd;
 
     public float range;
 

@@ -110,7 +110,7 @@ public class Rush : MonoBehaviour {
             transform.GetComponent<Rigidbody2D>().angularVelocity = 0;
         }
 
-        for (int i = 1; i < Unit.Count + 1; i++)
+        for (int i = 1; i < zako.Count + 1; i++)
         {
             if (Unit[i-1] != null)
             {
